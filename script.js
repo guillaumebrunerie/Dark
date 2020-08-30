@@ -741,22 +741,22 @@ function initSVG(season, episode)
 
     if (document.fullscreenElement == null)
         uiCode +=
-          `<g ${scaling}><a href="#" onclick="enableFullscreen()">
+          `<g ${scaling}><g class="button" onclick="enableFullscreen()">
              <rect x="${data.right - 52}" y="800" width="54" height="49" stroke="black" stroke-width="2" rx="5" fill="darkgrey"/>
              <path d="M ${data.right - 25} 827 m -10   5 l -10  10 v -10 M ${data.right - 25} 827 m -10   5 l -10  10 h  10" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
              <path d="M ${data.right - 25} 827 m  10   5 l  10  10 v -10 M ${data.right - 25} 827 m  10   5 l  10  10 h -10" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
              <path d="M ${data.right - 25} 827 m  10 -10 l  10 -10 v  10 M ${data.right - 25} 827 m  10 -10 l  10 -10 h -10" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
              <path d="M ${data.right - 25} 827 m -10 -10 l -10 -10 v  10 M ${data.right - 25} 827 m -10 -10 l -10 -10 h  10" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
-           </a>`;
+           </g></g>`;
     else
         uiCode +=
-          `<a href="#" onclick="disableFullscreen()">
+          `<g class="button" onclick="disableFullscreen()">
              <rect x="${data.right - 52}" y="800" width="54" height="49" stroke="black" stroke-width="2" rx="5" fill="darkgrey"/>
              <path d="M ${data.right - 25} 827 m -20  15 l  10 -10 v  10 M ${data.right - 25} 827 m -20  15 l  10 -10 h -10" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
              <path d="M ${data.right - 25} 827 m  20  15 l -10 -10 v  10 M ${data.right - 25} 827 m  20  15 l -10 -10 h  10" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
              <path d="M ${data.right - 25} 827 m  20 -20 l -10  10 v -10 M ${data.right - 25} 827 m  20 -20 l -10  10 h  10" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
              <path d="M ${data.right - 25} 827 m -20 -20 l  10  10 v -10 M ${data.right - 25} 827 m -20 -20 l  10  10 h -10" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
-           </a></g>`;
+           </g>`;
 
     /* Button to hide spoilers */
     if (episodeOverall <= spoilerLevel && episodeOverall >= 1)
