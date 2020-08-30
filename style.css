@@ -1,0 +1,84 @@
+/* The SVG takes the whole screen */
+
+html, body {
+    margin:0;
+    padding:0;
+    overflow:hidden;
+    background-color: black;
+}
+
+svg {
+    position:fixed;
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
+}
+
+
+/* Interactivity of links */
+
+a, #magnified, .button {
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+a:focus {
+    outline: none;
+}
+
+a {
+    cursor: default;
+}
+
+#treeUI a:hover, #treeUI .button:hover, .enabled .button:hover {
+    transform: scale(0.95);
+    cursor: pointer;
+}
+
+/* Blur effect */
+
+#treeContents:not(.enabled) {
+    filter: url(#blur);
+}
+
+
+/* Styling for texts */
+
+.name, .title, .instructions {
+    text-anchor: middle;
+    font-family: sans;
+    font-weight: bold;
+    fill: lightgrey;
+    stroke: black;
+    stroke-width: 2;
+    paint-order: stroke;
+}
+
+.title {
+    dominant-baseline: middle;
+}
+
+.instructions {
+    text-anchor: start;
+    fill: darkgrey;
+}
+
+.comment {
+    text-anchor: middle;
+    font-family: sans;
+    font-weight: bold;
+    fill: black;
+    dominant-baseline: middle;
+}
+
+.copyright {
+    text-anchor: end;
+    fill: darkgrey;
+    font-size: 15px;
+    font-family: sans;
+}
+
+.copyright a, .instructions a {
+    fill: lightgrey;
+}

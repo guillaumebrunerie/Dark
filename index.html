@@ -1,0 +1,52 @@
+<!doctype html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>Dark Family Tree</title>
+  <meta name="description" content="A spoiler-free family tree for the Netflix series Dark.">
+  <meta name="author" content="Guillaume Brunerie">
+
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preload" as="image" href="photos/background.jpg">
+  <link rel="preload" as="image" href="photos/background1.jpg">
+  <link rel="preload" as="image" href="photos/background2.jpg">
+  <link rel="preload" as="image" href="photos/background3.jpg">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <svg id="tree" preserveAspectRatio="xMinYMid meet">
+    <defs>
+      <filter id="blur">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="10" color-interpolation-filters="sRGB"/>
+      </filter>
+
+      <filter id="background">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="2" color-interpolation-filters="sRGB"/>
+        <feComponentTransfer color-interpolation-filters="sRGB">
+          <feFuncR type="linear" slope="0.3"></feFuncR>
+          <feFuncG type="linear" slope="0.3"></feFuncG>
+          <feFuncB type="linear" slope="0.3"></feFuncB>
+        </feComponentTransfer>
+      </filter>
+
+      <filter id="backgroundBlur">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="20" color-interpolation-filters="sRGB"/>
+        <feComponentTransfer color-interpolation-filters="sRGB">
+          <feFuncR type="linear" slope="0.3"></feFuncR>
+          <feFuncG type="linear" slope="0.3"></feFuncG>
+          <feFuncB type="linear" slope="0.3"></feFuncB>
+        </feComponentTransfer>
+      </filter>
+    </defs>
+
+    <g id="treeContents"></g>
+    <g id="treeUI"></g>
+    <use href="#magnified"/>
+  </svg>
+  <script src="script.js"></script>
+</body>
+</html>
